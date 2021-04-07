@@ -1,15 +1,18 @@
-package les21.demo.dao;
+package les21.demo;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import les21.demo.domain.User;
 
-
-
+@Repository
 public interface UserRepo extends JpaRepository<User, Integer>{
 
-	List<User> findByEmail(String email);
+	Optional<User> findByEmail(String email);
+
+	
 
 }

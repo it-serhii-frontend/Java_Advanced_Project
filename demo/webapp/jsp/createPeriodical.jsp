@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Welcome</title>
+<title>Create periodical</title>
 
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -36,7 +38,7 @@
 		<div style="margin-left: 25%">
 
 			<div class="w3-container w3-teal">
-				<h1>Periodicals</h1>
+				<h1>Create new Periodical</h1>
 			</div>
 
 			<div class="w3-container">
@@ -49,40 +51,33 @@
 					<h2>
 						Welcome ${pageContext.request.userPrincipal.name} <a
 							onclick="document.forms['logoutForm'].submit()">Logout</a>
+							
 					</h2>
 
 				</c:if>
 
 
-				<c:if test="${not empty periodicals}">
 
-					<c:forEach items="${periodicals}" var="currentPeriodical">
+				<form:form method="POST" action="${contextPath}/addPeriodical"
+					modelAttribute="periodical">
+					<table>
+						<tr>
+							<td><form:label path="name">Name</form:label></td>
+							<td><form:input path="name" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="description">Description</form:label></td>
+							<td><form:input path="description" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="price">Price</form:label></td>
+							<td><form:input path="price" /></td>
+						</tr>
+					</table>
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
 
-
-
-
-
-						<div class="w3-card-4" style="width: 50%">
-							<header class="w3-container w3-light-grey">
-								<h3>${currentPeriodical.name}</h3>
-							</header>
-							<div class="w3-container">
-								<p>1 new friend request</p>
-								<hr>
-								<img src="http://ugv.ua/web/files/images/default.png"
-									alt="Avatar" class="w3-left w3-circle w3-margin-right"
-									style="width: 60px">
-								<p>${currentPeriodical.description}</p>
-								<p>${currentPeriodical.price}</p>
-
-								<br>
-							</div>
-							<button class="w3-button w3-block w3-dark-grey">add to
-								bucket</button>
-						</div>
-
-					</c:forEach>
-				</c:if>
+				</form:form>
 
 			</div>
 

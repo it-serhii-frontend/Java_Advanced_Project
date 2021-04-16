@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import les21.demo.domain.Periodical;
 
+
+
 @Repository
 public interface PeriodicalRepo extends JpaRepository<Periodical, Integer>{
 

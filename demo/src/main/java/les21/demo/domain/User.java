@@ -1,5 +1,6 @@
 package les21.demo.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,19 +14,25 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	  @Column(name="id")
 	private Integer id;
-
+	
+	@Column(name="email")
 	private String email;
 
+	@Column(name="firstName")
 	private String firstName;
-
+	
+	@Column(name="lastName")
 	private String lastName;
 
 	@Enumerated(EnumType.STRING)
 	private UserRole role;
 
+	@Column(name="password")
 	private String password;
-	
+
+	@Column(name="passwordConfirm")
 	private String passwordConfirm;
 
 	

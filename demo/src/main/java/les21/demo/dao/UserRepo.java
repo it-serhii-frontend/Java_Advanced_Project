@@ -1,4 +1,4 @@
-package les21.demo;
+package les21.demo.dao;
 
 
 import java.util.Optional;
@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import les21.demo.domain.User;
+
+
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer>{

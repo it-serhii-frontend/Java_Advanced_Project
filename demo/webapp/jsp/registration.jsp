@@ -3,11 +3,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<c:set var ="contextPath" value ="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Log in with your account</title>
+<meta charset ="utf-8">
+<meta http-equiv="X-UA-Compatible" content ="IE=edge">
+<meta name ="viewport" content ="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Create an account</title>
 
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -18,7 +26,7 @@
 
 	<div class="container">
 
-		<form:form class="form-signin" method='POST' modelAttribute="userForm">
+		<form:form class="form-signin" method="POST" modelAttribute="userForm">
 			<h2 class="form-signin-heading">Create your account</h2>
 
 			<spring:bind path="firstName">

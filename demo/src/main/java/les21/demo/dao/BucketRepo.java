@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import les21.demo.domain.Bucket;
 
+
+
 @Repository
 public interface BucketRepo extends JpaRepository<Bucket, Integer>{
 

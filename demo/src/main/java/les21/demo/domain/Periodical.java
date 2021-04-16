@@ -15,11 +15,13 @@ public class Periodical {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column
+	@Column(name="name")
 	private String name;
-	@Column
+	
+	@Column(name="description")
 	private String description;
-	@Column
+	
+	@Column(name="price")
 	private Double price;
 
 	public Periodical(Integer id, String name, String description, Double price) {
